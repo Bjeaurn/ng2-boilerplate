@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 
 import {AlertModule} from 'ng2-bootstrap'
 import {AlertsComponent} from './alerts/alerts.component'
-import {AlertsService} from './alerts/alerts.service'
+import {AlertsService} from './alerts.service'
 
 @NgModule({
   declarations: [

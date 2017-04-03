@@ -1,5 +1,5 @@
 import {Component} from '@angular/core'
-import {AlertsService, Alert} from './alerts.service'
+import {AlertsService, Alert} from '../alerts.service'
 import {Observable} from 'rxjs'
 
 @Component({
