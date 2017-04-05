@@ -4,7 +4,7 @@ import { Http, Response, XHRBackend, RequestOptions } from '@angular/http'
 @Injectable()
 export class HttpClient extends Http {
     constructor(backend: XHRBackend, options: RequestOptions) {
-        options.headers.append('test', 'Test test test')
+        // options.headers.append('header-name', 'header-value')
         super(backend, options)
     }
 }
