@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core'
 import {Subject} from 'rxjs'
+import {HttpClient} from './http.client'
 
 export type Alert = {
     title: string
@@ -12,11 +13,9 @@ export type AlertType = "danger" | "info" | "success" | "warning"
 @Injectable()
 export class AlertsService {
     private alertsSubject: Subject<Alert[]> = new Subject<Alert[]>()
+    constructor(private http: HttpClient) {}
 
     private alerts: Alert[] = []
-
-    constructor() {}
-
     alert(title: string, type?: AlertType, timeout?: number) {
         let alert = <Alert>{
             title: title,
