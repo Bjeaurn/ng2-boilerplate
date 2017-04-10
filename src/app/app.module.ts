@@ -7,16 +7,22 @@ import { RouterModule, Routes } from '@angular/router'
 import { SharedModule } from './shared/shared.module'
 import { HttpClient } from './shared/http.client'
 import { BaseModule } from './base/base.module'
+import { PageNotFoundComponent } from "./shared/pagenotfound.component"
+
+const appRoutes: Routes = [
+  { path: '**', component: PageNotFoundComponent }
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule,
+    RouterModule.forRoot(appRoutes),
     SharedModule,
     BaseModule    
   ],
