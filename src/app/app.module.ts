@@ -7,6 +7,9 @@ import { RouterModule, Routes } from '@angular/router'
 import { SharedModule } from './shared/shared.module'
 import { HttpClient } from './shared/http.client'
 import { BaseModule } from './base/base.module'
+
+import { ModuleModule } from './module/module.module'
+
 import { PageNotFoundComponent } from "./shared/pagenotfound.component"
 
 const appRoutes: Routes = [
@@ -22,9 +25,10 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes),
     SharedModule,
-    BaseModule    
+    BaseModule,
+    ModuleModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     HttpClient
