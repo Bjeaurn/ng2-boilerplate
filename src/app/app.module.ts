@@ -1,3 +1,5 @@
+import { counterReducer } from './module/counter'
+import { HttpClient } from '@angular/common/http'
 import { HomeComponent } from './module/home.component'
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
@@ -6,12 +8,17 @@ import { HttpModule } from '@angular/http'
 import { AppComponent } from './app.component'
 import { RouterModule, Routes } from '@angular/router'
 import { SharedModule } from './shared/shared.module'
-import { HttpClient } from './shared/http.client'
 import { BaseModule } from './base/base.module'
 
 import { ModuleModule } from './module/module.module'
 
 import { PageNotFoundComponent } from "./shared/pagenotfound.component"
+import { StoreModule, ActionReducerMap, State } from '@ngrx/store'
+import { StoreConfig } from '@ngrx/store/src/store_module'
+
+const reducers: ActionReducerMap<any> = {
+  counter: counterReducer
+}
 
 export const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent},
@@ -30,7 +37,8 @@ export const appRoutes: Routes = [
     SharedModule,
     BaseModule,
     ModuleModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    StoreModule.forRoot(reducers, <StoreConfig<any>>{})
   ],
   providers: [
     HttpClient
