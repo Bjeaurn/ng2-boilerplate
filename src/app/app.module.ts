@@ -1,3 +1,4 @@
+import { HomeComponent } from './module/home.component'
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
@@ -13,6 +14,7 @@ import { ModuleModule } from './module/module.module'
 import { PageNotFoundComponent } from "./shared/pagenotfound.component"
 
 const appRoutes: Routes = [
+  { path: '', pathMatch: 'full', component: HomeComponent},
   { path: '**', component: PageNotFoundComponent }
 ]
 
