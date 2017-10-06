@@ -8,7 +8,7 @@ import {Component} from '@angular/core'
         <ul>
             <li>Bootstrap 3</li>
             <li>Ngx-bootstrap</li>
-            <li>NgRx</li>
+            <li>@ngrx/store (Redux inspired statemanagement for Angular with RxJS</li>
         </ul>
     `
 })
