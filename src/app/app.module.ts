@@ -13,7 +13,7 @@ import { ModuleModule } from './module/module.module'
 
 import { PageNotFoundComponent } from "./shared/pagenotfound.component"
 
-const appRoutes: Routes = [
+export const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent},
   { path: '**', component: PageNotFoundComponent }
 ]
