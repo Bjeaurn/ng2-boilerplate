@@ -11,7 +11,7 @@ import { BaseModule } from './base/base.module'
 
 import { ModuleModule } from './module/module.module'
 
-import { PageNotFoundComponent } from "./shared/pagenotfound.component"
+import { PageNotFoundComponent } from './shared/pagenotfound.component'
 
 export const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent},
